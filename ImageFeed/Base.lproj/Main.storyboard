@@ -28,7 +28,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="zIF-kp-F8Z" userLabel="cellImage">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="13" translatesAutoresizingMaskIntoConstraints="NO" id="zIF-kp-F8Z" userLabel="cellImage">
                                                     <rect key="frame" x="16" y="4" width="398" height="75"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -69,8 +69,8 @@
                                             <constraint firstItem="LN5-AP-zJH" firstAttribute="leading" secondItem="zIF-kp-F8Z" secondAttribute="leading" constant="8" id="cn6-D8-Pst"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="cellImage" destination="zIF-kp-F8Z" id="bx0-wX-hVp"/>
                                             <outlet property="dateLabel" destination="LN5-AP-zJH" id="Vdw-I0-yVb"/>
-                                            <outlet property="imageView" destination="zIF-kp-F8Z" id="zMT-oe-glT"/>
                                             <outlet property="likeButton" destination="u1F-y2-Tap" id="YSW-uC-Qcu"/>
                                         </connections>
                                     </tableViewCell>
@@ -100,7 +100,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0" width="1600" height="1059"/>
+        <image name="13" width="1280" height="905"/>
         <image name="No ActiveLikeButtom" width="42" height="42"/>
         <namedColor name="YP Black">
             <color red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
