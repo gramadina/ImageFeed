@@ -107,6 +107,52 @@
             </objects>
             <point key="canvasLocation" x="-47" y="763"/>
         </scene>
+        <!--Single Image-->
+        <scene sceneID="N2d-LY-DEr">
+            <objects>
+                <viewController title="Single Image" modalPresentationStyle="fullScreen" id="3qQ-IW-LZt" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LFp-v4-Poo">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="LJU-Mt-ZMS">
+                                <rect key="frame" x="-8" y="-8" width="446" height="948"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOo-PU-BoC" userLabel="backButton">
+                                <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="16v-oy-0eZ"/>
+                                    <constraint firstAttribute="width" constant="24" id="mYZ-YJ-eSS"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="chevron.backward">
+                                    <color key="titleColor" name="YP White"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapBackButton:" destination="3qQ-IW-LZt" eventType="touchUpInside" id="DST-pg-n4q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3JH-7D-nGZ"/>
+                        <color key="backgroundColor" name="YP Black"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LJU-Mt-ZMS" secondAttribute="bottom" constant="-8" id="BZB-UQ-0no"/>
+                            <constraint firstItem="QOo-PU-BoC" firstAttribute="top" secondItem="3JH-7D-nGZ" secondAttribute="top" constant="8" id="JlJ-8h-cJb"/>
+                            <constraint firstItem="LJU-Mt-ZMS" firstAttribute="topMargin" secondItem="LFp-v4-Poo" secondAttribute="top" id="KpS-eS-W7N"/>
+                            <constraint firstItem="LJU-Mt-ZMS" firstAttribute="leadingMargin" secondItem="LFp-v4-Poo" secondAttribute="leading" id="OLl-Jz-eLx"/>
+                            <constraint firstAttribute="trailing" secondItem="LJU-Mt-ZMS" secondAttribute="trailingMargin" id="fSr-4t-dvz"/>
+                            <constraint firstItem="QOo-PU-BoC" firstAttribute="leading" secondItem="3JH-7D-nGZ" secondAttribute="leading" constant="16" id="rRg-Xj-O5N"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="agL-B4-HCH"/>
+                    <connections>
+                        <outlet property="singleImage" destination="LJU-Mt-ZMS" id="nZk-qh-r71"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0m-zF-DcN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621" y="46"/>
+        </scene>
         <!--ImageList-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -141,8 +187,8 @@
                                                     <color key="textColor" name="YP White"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1F-y2-Tap" userLabel="likeButton">
-                                                    <rect key="frame" x="356" y="0.0" width="42" height="42"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1F-y2-Tap" userLabel="likeButton">
+                                                    <rect key="frame" x="370" y="4" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="dul-2Q-DvE"/>
                                                         <constraint firstAttribute="height" constant="44" id="wGr-Mw-kbb"/>
@@ -188,9 +234,10 @@
                             <constraint firstItem="UVk-NX-Igf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZCZ-2V-TCa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fEV-D0-Pue"/>
+                    <navigationItem key="navigationItem" id="jAy-SR-XIm"/>
                     <connections>
                         <outlet property="tableView" destination="UVk-NX-Igf" id="Hqo-mJ-Wmb"/>
+                        <segue destination="3qQ-IW-LZt" kind="presentation" identifier="ShowSingleImage" id="pO3-S9-dsl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -200,6 +247,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Is0-pK-aTe">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UsJ-iy-bvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RPd-2D-kiJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="button1Active" id="b0h-oK-zD1"/>
                     <toolbarItems/>
@@ -218,17 +266,18 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tP3-TX-qke"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UsJ-iy-bvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-47.441860465116278" y="45.708154506437772"/>
+            <point key="canvasLocation" x="-71" y="46"/>
         </scene>
     </scenes>
     <resources>
+        <image name="0" width="1600" height="1059"/>
         <image name="13" width="1280" height="905"/>
         <image name="Exit" width="24" height="24"/>
         <image name="No ActiveLikeButtom" width="42" height="42"/>
         <image name="button1Active" width="30" height="30"/>
         <image name="button2Active" width="30" height="30"/>
+        <image name="chevron.backward" width="9" height="15.666666984558105"/>
         <image name="profilePhoto" width="350" height="350"/>
         <namedColor name="YP Black">
             <color red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
