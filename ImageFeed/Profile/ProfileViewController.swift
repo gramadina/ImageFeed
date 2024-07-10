@@ -26,18 +26,6 @@ final class ProfileViewController: UIViewController {
         target: self,
         action: #selector(Self.tapLogOutButton)
     )
-    /*/ private var logOutButton = UIButton.systemButton(
-     with: UIImage(systemName: "ipad.and.arrow.forward")!,
-     target: self,
-     action: #selector(Self.tapLogOutButton))*/
-    
-    
-    /* @IBOutlet private var photoImage: UIImageView!
-     @IBAction private func tapLogoutButton(_ sender: Any) {}
-     @IBOutlet private var logoutButton: UIButton!
-     @IBOutlet private var nameLabel: UILabel!
-     @IBOutlet private var nickLabel: UILabel!
-     @IBOutlet private var descriptionLabel: UILabel! */
     
     override func viewDidLoad() {
         super.viewDidLoad()
