@@ -26,18 +26,6 @@ final class ProfileViewController: UIViewController {
         target: self,
         action: #selector(Self.tapLogOutButton)
     )
-    /*/ private var logOutButton = UIButton.systemButton(
-     with: UIImage(systemName: "ipad.and.arrow.forward")!,
-     target: self,
-     action: #selector(Self.tapLogOutButton))*/
-    
-    
-    /* @IBOutlet private var photoImage: UIImageView!
-     @IBAction private func tapLogoutButton(_ sender: Any) {}
-     @IBOutlet private var logoutButton: UIButton!
-     @IBOutlet private var nameLabel: UILabel!
-     @IBOutlet private var nickLabel: UILabel!
-     @IBOutlet private var descriptionLabel: UILabel! */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +55,7 @@ final class ProfileViewController: UIViewController {
         
         nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
+        nameLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
     }
     
     private func makeNickLabel() {
@@ -79,9 +68,11 @@ final class ProfileViewController: UIViewController {
         
         nickLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8).isActive = true
         nickLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
+        nickLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
     }
     
     private func makeDescriptionLabel() {
+        descriptionLabel.numberOfLines = 0
         descriptionLabel.text = "Hello, world!"
         descriptionLabel.font = UIFont.systemFont(ofSize: 13)
         descriptionLabel.textColor = .ypWhite
@@ -91,10 +82,11 @@ final class ProfileViewController: UIViewController {
         
         descriptionLabel.topAnchor.constraint(equalTo: nickLabel.bottomAnchor, constant: 8).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
     }
     
     private func makeLogOutButton() {
-        logoutButton.tintColor = .red
+        logoutButton.tintColor = .ypRed
         
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(logoutButton)
