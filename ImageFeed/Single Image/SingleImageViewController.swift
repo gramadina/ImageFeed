@@ -17,6 +17,8 @@ final class SingleImageViewController: UIViewController {
         }
     }
     
+    // MARK: - Override functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +42,8 @@ final class SingleImageViewController: UIViewController {
     @IBOutlet private weak var singleImage: UIImageView!
     @IBOutlet private weak var scrollView: UIScrollView!
     
+    // MARK: - Functions
+    
     private func rescaleAndCenterImageInScrollView(image: UIImage) {
         let minZoomScale = scrollView.minimumZoomScale
         let maxZoomScale = scrollView.maximumZoomScale
@@ -58,6 +62,8 @@ final class SingleImageViewController: UIViewController {
     }
     
 }
+
+// MARK: - Extensions
 
 extension SingleImageViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

@@ -12,11 +12,6 @@ enum WebViewConstants {
     static let unsplashAuthorizeURLString = "https://unsplash.com/oauth/authorize"
 }
 
-protocol WebViewViewControllerDelegate: AnyObject{
-    func webViewViewController(_ vc: WebViewViewController, didAuthenticateWithCode code: String)
-    func webViewControllerDidCancel(_ vc: WebViewViewController)
-}
-
 final class WebViewViewController: UIViewController {
     
     @IBOutlet private var progressView: UIProgressView!

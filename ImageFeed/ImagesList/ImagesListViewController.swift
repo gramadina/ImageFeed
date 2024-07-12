@@ -21,6 +21,8 @@ final class ImagesListViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
+    // MARK: - Override functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -46,6 +48,8 @@ final class ImagesListViewController: UIViewController {
         }
     }
 }
+
+// MARK: - Extensions
 
 extension ImagesListViewController: UITableViewDataSource {
     

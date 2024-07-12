@@ -27,6 +27,8 @@ final class ProfileViewController: UIViewController {
         action: #selector(Self.tapLogOutButton)
     )
     
+    // MARK: - Override functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeProfilePhoto()
@@ -35,6 +37,8 @@ final class ProfileViewController: UIViewController {
         makeDescriptionLabel()
         makeLogOutButton()
     }
+    
+    // MARK: - Functions
     
     private func makeProfilePhoto() {
         view.addSubview(imageView)
