@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab-->
         <scene sceneID="sqQ-dV-RDi">
             <objects>
-                <tabBarController id="eyI-9d-WkX" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="eyI-9d-WkX" customClass="Tab" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p9y-ow-dsK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -220,11 +220,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-ot-Isl" userLabel="logInButton">
-                                <rect key="frame" x="43.666666666666657" y="760" width="343" height="48"/>
+                                <rect key="frame" x="16" y="794" width="398" height="48"/>
                                 <color key="backgroundColor" name="YP White"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="IoX-mj-fcd"/>
-                                    <constraint firstAttribute="width" constant="343" id="e05-LS-Hfx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -253,9 +252,10 @@
                         <color key="backgroundColor" name="YP Background"/>
                         <constraints>
                             <constraint firstItem="J3d-hC-BXG" firstAttribute="centerY" secondItem="YVm-OC-gi8" secondAttribute="centerY" id="0Kr-mU-4cD"/>
-                            <constraint firstItem="i2S-ot-Isl" firstAttribute="centerX" secondItem="YVm-OC-gi8" secondAttribute="centerX" id="FSj-qC-BlL"/>
+                            <constraint firstItem="YVm-OC-gi8" firstAttribute="trailing" secondItem="i2S-ot-Isl" secondAttribute="trailing" constant="16" id="ALt-bI-0kQ"/>
                             <constraint firstItem="J3d-hC-BXG" firstAttribute="centerX" secondItem="YVm-OC-gi8" secondAttribute="centerX" id="S8D-i7-8zk"/>
-                            <constraint firstAttribute="bottom" secondItem="i2S-ot-Isl" secondAttribute="bottom" constant="124" id="y00-gf-PmQ"/>
+                            <constraint firstItem="i2S-ot-Isl" firstAttribute="leading" secondItem="YVm-OC-gi8" secondAttribute="leading" constant="16" id="XJ0-pA-FjY"/>
+                            <constraint firstItem="YVm-OC-gi8" firstAttribute="bottom" secondItem="i2S-ot-Isl" secondAttribute="bottom" constant="90" id="y00-gf-PmQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k5P-4G-ggw"/>
