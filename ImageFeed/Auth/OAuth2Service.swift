@@ -17,21 +17,26 @@ final class OAuth2Service {
     
     private init() {}
     
-    func makeOAuthTokenRequest(code: String) -> URLRequest {
-        guard var urlComponents = URLComponents(string: "https://unsplash.com/oauth/token") else {
-            preconditionFailure("Failed to create URLComponents")
+    func makeOAuthTokenRequest(code: String) -> URLRequest? {
+        guard
+            let baseURL = URL(string: "https://unsplash.com")
+        else {
+            print("BaseUrl cannot be constructed")
+            return nil
         }
         
-        urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: Constants.accessKey),
-            URLQueryItem(name: "client_secret", value: Constants.secretKey),
-            URLQueryItem(name: "redirect_uri", value: Constants.redirectURI),
-            URLQueryItem(name: "code", value: code),
-            URLQueryItem(name: "grant_type", value: "authorization_code")
-        ]
-        
-        guard let url = urlComponents.url else {
-            preconditionFailure("Failed to get URL from URLComponents")
+        guard
+            let url = URL(
+                string: "/oauth/token"
+                + "?client_id=\(Constants.accessKey)"
+                + "&&client_secret=\(Constants.secretKey)"
+                + "&&redirect_uri=\(Constants.redirectURI)"
+                + "&&code=\(code)"
+                + "&&grant_type=authorization_code",
+                relativeTo: baseURL
+            ) else {
+            print("Unable to construct makeOAuthTokenRequestUrl")
+            return nil
         }
         
         var request = URLRequest(url: url)
@@ -39,44 +44,27 @@ final class OAuth2Service {
         return request
     }
     
+    
     func fetchOAuthToken(code: String, completion: @escaping (Result<String, Error>) -> Void) {
-        let session = URLSession.shared
-        let request = makeOAuthTokenRequest(code: code)
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                if let response = response as? HTTPURLResponse {
-                    let statusCode = response.statusCode
-                    
-                    if 200 ..< 300 ~= statusCode {
-                        if let data = data {
-                            let decoder = JSONDecoder()
-                            decoder.keyDecodingStrategy = .convertFromSnakeCase
-                            do {
-                                let response = try decoder.decode(OAuthTokenResponseBody.self, from: data)
-                                let accessToken = response.accessToken
-                                self.oauthToken = accessToken
-                                completion(.success(accessToken))
-                            } catch {
-                                completion(.failure(NetworkError.urlSessionError))
-                                print("Decoder error: \(error)")
-                            }
-                        } else {
-                            completion(.failure(NetworkError.urlSessionError))
-                        }
-                    } else {
-                        completion(.failure(NetworkError.httpStatusCode(statusCode)))
-                        print("HTTP status code error: \(statusCode)")
-                    }
-                } else if let error = error {
-                    completion(.failure(NetworkError.urlRequestError(error)))
-                    print("URL request error: \(error)")
-                } else {
-                    completion(.failure(NetworkError.urlSessionError))
-                    print("URL session error")
-                }
-            }
+        guard let request = makeOAuthTokenRequest(code: code) else {
+            print("Не удалось создать POST HTTP запрос в Unsplash")
+            return
         }
-        task.resume()
+        
+        URLSession.shared.data(for: request){ result in
+            switch result {
+            case .success(let data):
+                do {
+                    let tokenResponse = try JSONDecoder().decode(OAuthTokenResponseBody.self, from: data)
+                    completion(.success(tokenResponse.accessToken))
+                } catch {
+                    print("Ошибка при JSON декодировании: \(error)")
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                print("Произошла сетевая ошибка: \(error)")
+                completion(.failure(error))
+            }
+        }.resume()
     }
 }
