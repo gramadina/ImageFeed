@@ -249,7 +249,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YVm-OC-gi8"/>
-                        <color key="backgroundColor" name="YP Background"/>
+                        <color key="backgroundColor" name="YP Black"/>
                         <constraints>
                             <constraint firstItem="J3d-hC-BXG" firstAttribute="centerY" secondItem="YVm-OC-gi8" secondAttribute="centerY" id="0Kr-mU-4cD"/>
                             <constraint firstItem="YVm-OC-gi8" firstAttribute="trailing" secondItem="i2S-ot-Isl" secondAttribute="trailing" constant="16" id="ALt-bI-0kQ"/>
@@ -348,7 +348,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2UN-aL-MnM"/>
-                        <color key="backgroundColor" name="YP Background"/>
+                        <color key="backgroundColor" name="YP Black"/>
                         <constraints>
                             <constraint firstItem="qDq-m0-MBa" firstAttribute="centerX" secondItem="2UN-aL-MnM" secondAttribute="centerX" id="JOl-j2-kt4"/>
                             <constraint firstItem="qDq-m0-MBa" firstAttribute="centerY" secondItem="2UN-aL-MnM" secondAttribute="centerY" id="dA4-WF-znL"/>

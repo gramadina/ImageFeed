@@ -21,7 +21,7 @@ final class OAuth2Service {
         guard
             let baseURL = URL(string: "https://unsplash.com")
         else {
-            print("BaseUrl cannot be constructed")
+            print("BaseUrl не может быть составлен")
             return nil
         }
         
@@ -35,7 +35,7 @@ final class OAuth2Service {
                 + "&&grant_type=authorization_code",
                 relativeTo: baseURL
             ) else {
-            print("Unable to construct makeOAuthTokenRequestUrl")
+            print("Невозможно составить makeOAuthTokenRequestUrl")
             return nil
         }
         
