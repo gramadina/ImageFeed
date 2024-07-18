@@ -85,7 +85,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krn-jx-w70" userLabel="shareButton">
-                                <rect key="frame" x="311" y="831" width="50" height="50"/>
+                                <rect key="frame" x="190" y="831" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7Xi-KX-I4w"/>
                                     <constraint firstAttribute="width" constant="50" id="igs-gk-KqC"/>
@@ -102,9 +102,9 @@
                         <constraints>
                             <constraint firstItem="3JH-7D-nGZ" firstAttribute="bottom" secondItem="Krn-jx-w70" secondAttribute="bottom" constant="51" id="6YP-jh-ovO"/>
                             <constraint firstItem="QOo-PU-BoC" firstAttribute="leading" secondItem="3JH-7D-nGZ" secondAttribute="leading" constant="8" id="Lg2-8Y-gUh"/>
-                            <constraint firstItem="3JH-7D-nGZ" firstAttribute="trailing" secondItem="Krn-jx-w70" secondAttribute="trailing" constant="69" id="NLB-U9-WPx"/>
                             <constraint firstItem="iPl-2c-TZ0" firstAttribute="trailing" secondItem="3JH-7D-nGZ" secondAttribute="trailing" id="W8E-5o-geM"/>
                             <constraint firstItem="iPl-2c-TZ0" firstAttribute="bottom" secondItem="3JH-7D-nGZ" secondAttribute="bottom" id="a6I-68-2yQ"/>
+                            <constraint firstItem="Krn-jx-w70" firstAttribute="centerX" secondItem="3JH-7D-nGZ" secondAttribute="centerX" id="c3v-7p-t10"/>
                             <constraint firstItem="3JH-7D-nGZ" firstAttribute="top" secondItem="iPl-2c-TZ0" secondAttribute="top" id="lcc-SS-B9o"/>
                             <constraint firstItem="3JH-7D-nGZ" firstAttribute="leading" secondItem="iPl-2c-TZ0" secondAttribute="leading" id="ojq-C2-RnP"/>
                             <constraint firstItem="QOo-PU-BoC" firstAttribute="top" secondItem="3JH-7D-nGZ" secondAttribute="top" constant="8" id="ujo-9I-pnG"/>
