@@ -24,8 +24,10 @@ final class ProfileViewController: UIViewController {
     private lazy var logoutButton = UIButton.systemButton(
         with: UIImage(systemName: "ipad.and.arrow.forward")!,
         target: self,
-        action: #selector(Self.tapLogOutButton)
+        action: #selector(tapLogOutButton)
     )
+    
+    // MARK: - Override functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,8 @@ final class ProfileViewController: UIViewController {
         makeDescriptionLabel()
         makeLogOutButton()
     }
+    
+    // MARK: - Functions
     
     private func makeProfilePhoto() {
         view.addSubview(imageView)

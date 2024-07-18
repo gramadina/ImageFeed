@@ -23,6 +23,9 @@ final class ImagesListViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
+
+    // MARK: - Override functions
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -53,6 +56,8 @@ final class ImagesListViewController: UIViewController {
         }
     }
 }
+
+// MARK: - Extensions
 
 extension ImagesListViewController: UITableViewDataSource {
     
